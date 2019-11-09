@@ -1,0 +1,30 @@
+#mMenu {
+    background-color: #922149;
+    color: aliceblue;
+    height: 800px;
+    width: 50%;
+}
+
+nav {
+    background-color: #922149 !important;
+}
+
+nav a {
+    color: aliceblue;
+}
+
+#mContainer {
+    margin-top: 0px;
+}
+
+#mContenido {
+    background-color: brown;
+    color: white;
+    margin-right: 0%;
+}
+
+imagen {
+    margin-top: 10px !important;
+    margin-left: 30px;
+    box-shadow: inset;
+}

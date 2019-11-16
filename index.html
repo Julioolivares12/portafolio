@@ -24,6 +24,9 @@
                         <li class="activado">
                             <a href="#">capitulo 1</a>
                             <ul>
+                                <li><a href="#" onclick="cambiarIFrame('./teoriacapitulo1.html')">teoria capitulo
+                                        uno</a>
+                                </li>
                                 <li><a href="#">ejercicio 1</a></li>
                                 <li><a href="#">ejercicio 2</a></li>
                             </ul>
@@ -31,20 +34,22 @@
                         <li>
                             <a href="#">capitulo 2</a>
                             <ul>
-                                <li><a href="#" onclick="mostrarEjercicio('')">ejercicio 1</a></li>
+                                <li><a href="#" onclick="cambiarIFrame('./teoriaCapitulo2.html')">ejercicio 1</a></li>
                                 <li><a href="#">ejercicio 2</a></li>
                             </ul>
                         </li>
                         <li>
                             <a href="#">capitulo 3</a>
                             <ul>
-                                <li><a href="#" onclick="mostrarejercicio( './img/capitulo3TiposDeDatosEjercicio.png','ejemplo 1')">ejemplo
+                                <li><a href="#" onclick="cambiarIFrame('./teoriaCapitulo3.html')">teoria capitulo 3 </a>
+                                </li>
+                                <li><a href="#" onclick="cambiarIFrame( './ejemplo1Capitulo3.html')">ejemplo
                                         1</a> </li>
-                                <li><a href="#" onclick="mostrarejercicio( './img/capitulo3Ejercicio1.png','ejericicio 1')">ejercicio
+                                <li><a href="#" onclick="cambiarIFrame( './ejercicio1Capitulo3.html')">ejercicio
                                         1</a></li>
-                                <li><a href="#" onclick="mostrarejercicio( './img/capitulo3Ejercicio2.png', 'ejercicio 2')">ejercicio
+                                <li><a href="#" onclick="cambiarIFrame( './ejercicio2Capitulo3.html')">ejercicio
                                         2</a></li>
-                                <li><a href="#" onclick="mostrarejercicio( './img/capitulo3Ejercicio3.png', 'ejercicio 3')">ejercicio
+                                <li><a href="#" onclick="cambiarIFrame( './ejericicio3Capitulo3.html')">ejercicio
                                         3</a>
                                 </li>
                             </ul>
@@ -52,6 +57,8 @@
                         <li>
                             <a href="#">capitulo 4</a>
                             <ul>
+                                <li><a href="#" onclick="cambiarIFrame('./teoriaCapitulo4.html')">teoria capitulo 4</a>
+                                </li>
                                 <li><a href="#">ejercicio 1</a></li>
                                 <li><a href="#">ejercicio 2</a></li>
                             </ul>
@@ -59,6 +66,9 @@
                         <li>
                             <a href="#">capitulo 5</a>
                             <ul>
+                                <li>
+                                    <a href="#" onclick="cambiarIFrame('./teoriaCapitulo5.html')"></a>
+                                </li>
                                 <li><a href="#">ejercicio 1</a></li>
                                 <li><a href="#">ejercicio 2</a></li>
                             </ul>
@@ -66,6 +76,9 @@
                         <li>
                             <a href="#">capitulo 6</a>
                             <ul>
+                                <li>
+                                    <a href="#" onclick="cambiarIFrame('./teoriaCapitulo6.html')"></a>
+                                </li>
                                 <li><a href="#">ejercicio 1</a></li>
                                 <li><a href="#">ejercicio 2</a></li>
                             </ul>
@@ -75,8 +88,7 @@
             </div>
             <div class="col col-10" id="mContenido">
                 <div id="app">
-                    <h2 id="mostrarNombreEjercicio"></h2>
-                    <img alt="imagen" id="ejercicio">
+                    <iframe id="miPaginas" height="600" width="1200"></iframe>
                 </div>
             </div>
         </div>

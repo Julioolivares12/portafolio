@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/app.css">
+    <link rel="stylesheet" href="./css/prettify.css">
+    <link rel="stylesheet" href="./css/sunburst.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row">
+            <h1 class="tile">
+                teoria captitulo 6
+            </h1>
+            <p class="parrafo">
+                En su mayor parte, todos los lenguajes de programación realizan las tareas típicas que cualquier computadora necesita hacer: almacenar información, comparar información, tomar decisiones sobre esa información y realizar algunas acciones basadas en esas
+                decisiones. El lenguaje Swift hace que estas tareas sean más fáciles de entender y cumplir. El Real truco con Swift (en realidad, el truco con la mayoría de los lenguajes de programación) es comprender los símbolos y palabras clave utilizadas
+                para realizar esas tareas. Este capítulo continúa el examen de Swift y Xcode para que puede familiarizarse aún más con ellos. Un recién llegado Como sabrán, Swift no ha existido por mucho tiempo. El desarrollo del lenguaje Swift comenzó
+                alrededor de cuatro Hace años por Chris Lattner, y el 9 de septiembre de 2014, Swift 1.0 fue lanzado oficialmente. Swift toma prestados muchos ideas de Objective-C, pero también incorpora muchas características utilizadas por los lenguajes
+                de programación modernos. Swift fue diseñado desde cero para ser accesible al programador promedio. Actualmente, hay dos tipos principales de lenguajes de programación. Idiomas compilados como Objective-C y C ++ son conocidos por ser rígidos
+                y requieren cierta sintaxis. Los idiomas compilados también son significativamente más rápido en la ejecución. Los lenguajes interpretados, como Ruby, PHP y Python, son conocidos por ser más fácil de aprender y codificar pero más lento
+                en su ejecución. Swift es un lenguaje que cierra la brecha entre dos. Swift incorpora la flexibilidad que hace que los idiomas interpretados sean tan populares con el rendimiento requerido para aplicaciones y juegos exigentes. De hecho,
+                Apple afirma que las aplicaciones Swift funcionarán más rápido que los escritos en Objective-C. En algunas de las pruebas de Apple, Swift realizó casi cuatro veces más rápido que Python y 40 por ciento más rápido que Objective-C
+            </p>
+            <p class="parrafo">
+                Understanding symbols is a basic part of any programming language. Symbols are punctuation used to portray specific meanings in source code. Understanding the symbols of a language is required to be able to use the language. Here are some of the symbols
+                and language constructs used in Swift, most of which you’ve already encountered in one way or another: • {: This is the begin brace. It’s used to start what’s commonly referred to as a block of code. Blocks are used to define and surround
+                a section of code and define its scope. • }: This is the end brace. It’s used to end a block of code. Wherever there is a begin brace ({), there must always be an accompanying end brace (}).
+            </p>
+            <pre class="prettyprint">
+                func logMessage(){
+                    let hello  = "Hello World"
+                    print(hello)
+                }
+            </pre>
+            <p class="parrafo">
+                Implementación de objetos en Swift Swift fue construido desde cero para ser orientado a objetos. Incorpora las mejores partes de Objective-C sin las limitaciones de ser compatible con C. También toma algunas de las mejores características de un script
+                idioma. Los siguientes son algunos de los conceptos que hacen que Swift esté orientado a objetos. No te preocupes si algunos de estos términos parecen desconocidos; serán discutidos en capítulos posteriores (los capítulos 7 y 8 cubren
+                los conceptos básicos)
+
+                <ul>
+                    <li>Casi todo es un objeto.</li>
+                    <li>Los objetos contienen variables de instancia.</li>
+                    <li>Los objetos y las variables de instancia tienen un alcance definido.</li>
+                    <li>Las clases ocultan la implementación de un objeto.</li>
+                </ul>
+
+                <pre class="prettyprint">
+                    import Fundation
+                    class HelloWorld {
+                         func logMessage(){
+                         let hello = "Hello World"
+                         print(hello)
+                         }
+                    }
+
+                    let myHelloWorld = HelloWorld()
+                    myHelloWorld.logMessage()
+                </pre>
+            </p>
+        </div>
+
+        <script src="./js/main.js"></script>
+        <script src="./js/lang-swift.js"></script>
+        <script>
+            window.onload = function() {
+                prettyPrint();
+            }
+        </script>
+</body>
+
+</html>

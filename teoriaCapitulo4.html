@@ -12,6 +12,16 @@
     <style>
         .tabla {
             text-align: center;
+            color: aliceblue;
+        }
+        
+        ul {
+            color: aliceblue;
+        }
+        
+        ul li {
+            list-style: circle;
+            text-align: center;
         }
     </style>
 </head>
@@ -19,24 +29,30 @@
 <body>
     <div class="container">
         <div class="row">
-            <h1 class="tile">
+            <h1 class="title">
                 teoria de capitulo 4
             </h1>
+            <h1 class="title">
+                Lógica booleana
+            </h1>
             <p class="parrafo">
-                <h1 class="title">
-                    Lógica booleana
-                </h1>
+
                 La lógica booleana es un sistema para operaciones lógicas. La lógica booleana utiliza operadores binarios como AND y OR y el operador unario NO para determinar si se han cumplido sus condiciones. Los operadores binarios toman dos operandos Los operadores
                 unarios toman un operando. Acabamos de presentar un par de términos nuevos que pueden sonar confusos; sin embargo, probablemente uses Boolean lógica todos los días. Veamos un par de ejemplos de lógica booleana con los operadores binarios
                 AND y OR en un conversación que los padres a veces tienen con sus hijos adolescentes: "Puedes ir al cine esta noche si tu habitación está limpia Y los platos están guardados". "Puedes ir al cine esta noche si tu habitación está limpia
                 O los platos están guardados". Los resultados de los operadores booleanos son VERDADERO o FALSO. En el Capítulo 3, presentamos brevemente el booleano tipo de datos. Una variable que se define como booleana solo puede contener los valores
                 VERDADERO y FALSO.
 
-                <pre class="prettyprint">
-                    var seeMovies: Bool = false
-                </pre> En el ejemplo anterior, el operador AND toma dos operandos: uno a la izquierda y otro a la derecha de el AND. Cada operando puede evaluarse independientemente con un VERDADERO o FALSO.
+
 
             </p>
+            <pre class="prettyprint">
+                <code class="languaje-swift">
+                    var seeMovies: Bool = false
+                </code>
+                    
+            </pre>
+            <p class="parrafo">En el ejemplo anterior, el operador AND toma dos operandos: uno a la izquierda y otro a la derecha de el AND. Cada operando puede evaluarse independientemente con un VERDADERO o FALSO.</p>
             <p class="parrafo">
                 Para que una operación AND produzca un resultado VERDADERO, ambos lados del AND tienen que ser VERDADERO. En el primer ejemplo, el adolescente tiene que limpiar su habitación y lavar los platos. Si alguna de las condiciones es FALSA, el resultado es FALSO:
                 no hay películas para el adolescente. Para que una operación OR produzca un resultado VERDADERO, solo un operando tiene que ser VERDADERO, o ambas condiciones pueden ser VERDADERO para producir un resultado VERDADERO. En el segundo ejemplo,
@@ -49,12 +65,28 @@
                 Puede usar una herramienta que lo ayude a evaluar todos los operadores booleanos llamados tabla de verdad, y es un tabla matemática utilizada en lógica para evaluar operadores booleanos. Son útiles cuando se trata de determinar Todas las posibilidades
                 de un operador booleano. Veamos algunas tablas de verdad comunes para AND, OR, NOT, XOR, NAND, y NOR. En una tabla de verdad AND, hay cuatro combinaciones posibles de VERDADERO y FALSO
             </p>
-            <ul>
-                <li>TRUE AND TRUE = TRUE</li>
-                <li>TRUE AND FALSE = FALSE</li>
-                <li>FALSE AND TRUE = FALSE</li>
-                <li>FALSE AND FALSE = FALSE</li>
-            </ul>
+            <table class="tabla" border="1">
+                <tr>
+                    <td>TRUE AND TRUE</td>
+                    <td>=</td>
+                    <td>TRUE</td>
+                </tr>
+                <tr>
+                    <td>TRUE AND FALSE</td>
+                    <td>=</td>
+                    <td>FALSE</td>
+                </tr>
+                <tr>
+                    <td>FALSE AND TRUE</td>
+                    <td>=</td>
+                    <td>FALSE</td>
+                </tr>
+                <tr>
+                    <td>FALSE AND FALSE </td>
+                    <td>=</td>
+                    <td>FALSE</td>
+                </tr>
+            </table>
             <h1 class="title">Operadores de comparación</h1>
             <p class="parrafo">
                 En el desarrollo de software, puede comparar diferentes elementos de datos utilizando operadores de comparación. Estas Los operadores producen un resultado lógico VERDADERO o FALSO. La Tabla 4-7 muestra la lista de operadores de comparación
@@ -100,7 +132,7 @@
             </p>
         </div>
     </div>
-    <script src="./js/main.js"></script>
+    <script src="./js/prettify.js"></script>
     <script src="./js/lang-swift.js"></script>
     <script>
         window.onload = function() {

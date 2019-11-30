@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/app.css">
+    <link rel="stylesheet" href="./css/prettify.css">
+    <link rel="stylesheet" href="./css/sunburst.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row">
+            <h1 class="title">
+                teoria captitulo 7
+            </h1>
+            <h2 class="title">Crear una clase Swift</h2>
+            <p class="parrafo">
+                Las clases son fáciles de crear en Swift. En general, una clase estará contenida en su propio archivo, pero un solo archivo puede Mantenga muchas clases si lo desea.
+            </p>
+            <pre class="prettyprint">
+                class RadioStation
+            </pre>
+            <p class="parrafo">
+                Aquí, el nombre de la clase es RadioStation. Las clases Swift, por defecto, no heredan de una superclase. Si tu desea hacer que su clase Swift herede de otra clase, puede hacer esto así:
+
+
+
+                <pre class="prettyprint">
+                  class RadioStation: Station
+                </pre>
+            </p>
+            <pre class="prettyprint">
+                import UIKit
+                
+                class RadioStation: Station {
+                
+                var name: String
+                var frequency: Double
+                
+                override init() {
+                name = "Default"
+                 frequency = 100
+                 }
+                
+                 class func minAMFrequency() -> Double {
+                 return 520.0
+                 }
+                
+                 class func maxAMFrequency() -> Double {
+                 return 1610.0
+                 }
+                
+                 class func minFMFrequency() -> Double {
+                 return 88.3
+                 }
+                
+                 class func maxFMFrequency() -> Double {
+                 return 107.9
+                 }
+                
+                 func band() -> Int {
+                 if frequency >= RadioStation.minFMFrequency() && frequency <= RadioStation.maxFMFrequency() { 
+                    return 1 //FM  
+                } else {
+                      return 0 //AM 
+                     } 
+                   } 
+                 }
+            </pre>
+            <h2 class="title">
+                Variables de instancia
+            </h2>
+            <p class="parrafo">
+                muestra una clase de muestra con dos propiedades diferentes: nombre y frecuencia. La línea 1 importa el Definiciones de clase UIKit (más sobre eso en un momento). La línea 3 comienza la definición de la clase definiendo su nombre (a veces llamado el tipo).
+                Las líneas 5 y 6 definen las propiedades para la clase RadioStation. Cada vez que se crea una instancia de la clase RadioStation, el objeto RadioStation resultante tiene acceso a estos propiedades, que son solo para instancias específicas.
+                Si hay diez objetos de RadioStation, cada objeto tiene su variables propias independientes de los otros objetos. Esto también se conoce como alcance, ya que las variables del objeto están dentro del alcance de cada objeto.
+
+            </p>
+            <h2 class="title">Metodos</h2>
+            <p class="parrafo">
+                Almost every object has methods. In Swift, the common concept to interact with an object is calling a method on an object, like so:
+            </p>
+            <pre class="prettyprint">
+                myStation.band()
+
+            </pre>
+            <p class="parrafo">
+                La línea anterior llamará a un método llamado band en una instancia del objeto de clase RadioStation. Los métodos también pueden tener parámetros pasados ​​junto con ellos. ¿Por qué pasar parámetros? Los parámetros son aprobado por varias razones. Primero
+                (y más común), el rango de posibilidades es demasiado grande para escribir como métodos separados En segundo lugar, los datos que necesita almacenar en su objeto son variables, como los de una estación de radio. nombre. En el siguiente
+                ejemplo, verá que no es práctico escribir un método para cada radio posible frecuencia; en cambio, la frecuencia se pasa como un parámetro. Lo mismo se aplica al nombre de la estación.
+
+            </p>
+            <pre class="prettyprint">
+                myStation.setFrequency(104.7)
+         </pre>
+            <p class="parrafo">
+                El nombre del método es setFrequency. Las llamadas a métodos pueden tener varios parámetros, como lo ilustra el siguiente ejemplo:
+            </p>
+            <pre class="prettyprint">
+                myStation = RadioStation.init(name: "KZZP", frequency: 104.7)
+            </pre>
+            <p class="parrafo">
+                En el ejemplo anterior, la llamada al método consta de dos parámetros: el nombre de la estación y su frecuencia. Lo interesante de Swift en relación con otros idiomas es que los métodos se denominan esencialmente parámetros. Si este fuera un programa
+                C ++ o Java, la llamada sería la siguiente:
+
+            </p>
+            <pre class="prettyprint">
+                myObject = new RadioStation("KZZP", 104.7)
+            </pre>
+            <p class="parrafo">
+                Si bien los parámetros de un objeto de RadioStation pueden parecer obvios, tener parámetros nombrados puede ser una ventaja porque más o menos establecen para qué se utilizan los parámetros o qué hacen
+            </p>
+            <h2 class="title">
+                Usar métodos de tipo
+            </h2>
+            <p class="parrafo">
+                Una clase no siempre tiene que ser instanciada para ser utilizada. En algunos casos, las clases tienen métodos que pueden en realidad realiza algunas operaciones simples y devuelve valores antes de instanciar una clase. Estos métodos son llamados métodos
+                de tipo. En el Listado 7-1, los nombres de métodos que comienzan con class son métodos de tipo. Los métodos de tipo tienen limitaciones. Una de sus mayores limitaciones es que ninguna de las variables de instancia puede ser usado. Ser
+                incapaz de usar variables de instancia tiene sentido ya que no ha instanciado nada. Un método de tipo puede tener sus propias variables locales dentro del propio método, pero no puede usar ninguna de las variables definido como variables
+                de instancia. Una llamada a un método de tipo se vería así:
+            </p>
+            <pre class="prettyprint">
+                RadioStation.minAMFrequency.()
+            </pre>
+            <p class="parrafo">
+                Observe que la llamada es similar a cómo se llama a un método en un objeto instanciado. La gran diferencia es que en lugar de una variable de instancia, se usa el nombre de la clase. Los métodos de tipo se utilizan bastante ampliamente en el marcos de
+                macOS e iOS. Se utilizan principalmente para devolver algún tipo de valor fijo o conocido o para devolver una nueva instancia de un objeto. Estos tipos de métodos de tipo se denominan inicializadores. Aquí están algunos Ejemplos de métodos
+                de inicializador:
+            </p>
+            <pre class="prettyprint">
+                Date.timeIntervalSinceReferenceDate // Returns a number
+                String(format:"http://%@", "1000") // Returns a new String object
+                Dictionary<String, String>() // Returns a new Dictionary object.
+            </pre>
+            <p class="parrafo">
+                Todos los mensajes anteriores son métodos de tipo a los que se llama. La línea 1 simplemente devuelve un valor que representa el número de segundos desde el 1 de enero de 2001, que es el Fecha de referencia. La línea 2 devuelve un nuevo objeto String
+                que ha sido formateado y tiene un valor de http: // 1000. La línea 3 es una forma que se usa comúnmente porque en realidad asigna un nuevo objeto. Típicamente, la línea es no se usa solo, sino en una línea como esta:
+
+            </p>
+            <pre class="prettyprint">
+                var myDict = Dictionary<String, String>()
+            </pre>
+            <p class="parrafo">
+                Entonces, ¿cuándo usarías un método de tipografía? Como regla general, si el método devuelve información que no es específico de ninguna instancia particular de la clase, haga que el método sea un método de tipo. Por ejemplo, el minAMFrequency en el ejemplo
+                anterior sería el mismo para todas las instancias de cualquier RadioStation. objeto: este es un gran candidato para un método de tipo. Sin embargo, el nombre de la estación o su frecuencia asignada sería diferente para cada instancia de
+                la clase. Estos no deberían (y de hecho no podrían) ser métodos de tipo. La razón de esto es que los métodos de tipo no pueden usar ninguna de las variables de instancia definidas por la clase.
+            </p>
+            <h2 class="title">usando métodos de instancia</h2>
+            <p class="parrafo">
+                metodos de instancia están disponibles solo una vez que se ha instanciado una clase. Aqui esta un ejemplo
+            </p>
+            <pre class="prettyprint">
+                 var myStation: RadioStation // This declares a variable to hold the RadioStation
+                 object.
+                 myStation = RadioStation() // This creates a new RadioStation object.
+                 var band = myStation.band() // This method returns the Band of the RadioStation.
+            </pre>
+        </div>
+
+        <script src="./js/main.js"></script>
+        <script src="./js/lang-swift.js"></script>
+        <script>
+            window.onload = function() {
+                prettyPrint();
+            }
+        </script>
+</body>
+
+</html>

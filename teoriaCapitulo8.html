@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/app.css">
+    <link rel="stylesheet" href="./css/prettify.css">
+    <link rel="stylesheet" href="./css/sunburst.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row">
+            <h1 class="title">
+                teoria captitulo 8
+            </h1>
+            <h2 class="title">programacion basica en Swift</h2>
+            <h2 class="title">usando let vs var</h2>
+            <p class="parrafo">
+                La palabra var se usa para definir una variable, mientras que La palabra let se usa para definir una constante. Esto significa que si declara un valor con let, no podrá cambiar el valor El siguiente código define una constante:
+            </p>
+            <pre class="prettyprint">
+               let myName = "Brad"
+            </pre>
+            <p class="parrafo">
+                Una vez que define una constante, no puede cambiar el valor.
+                <pre class="prettyprint">
+                  myName = "John"
+                </pre> Esto te dará un error. Si desea crear una variable mutable o variable, debe usar var. Por ejemplo, puede hacer lo siguiente:
+                <pre class="prettyprint">
+                     var myName = "Brad"
+                     myName = "John"
+                 </pre> Esto no le dará ningún error porque myName ahora es una variable. Esto no se relaciona solo con cadenas e Ints, pero también se puede usar con colecciones y otros objetos. Las variables le dan más flexibilidad,
+                entonces, ¿por qué alguien querría usar una constante? La respuesta rápida es el rendimiento Si sabe que tiene un valor que no cambiará, el compilador puede optimizar ese valor como una constante
+            </p>
+            <h2 class="title">Entendiendo las colecciones</h2>
+            <h3 class="title">usado arreglos</h3>
+            <p class="parrafo">
+                La clase Array es como cualquier otra colección, ya que le permite al programador administrar un grupo de objetos. Una matriz es una colección ordenada, lo que significa que los objetos se ingresan en una matriz en un cierto orden y recuperado en el mismo
+                orden
+            </p>
+            <p class="parrafo">
+                La clase Array permite que un objeto sea recuperado por su índice en la matriz. Un índice es el numérico posición que ocuparía un objeto en la matriz. Por ejemplo, si hay tres elementos en la matriz, el Se puede hacer referencia a los objetos con índices
+                del 0 al 2. Al igual que con la mayoría de las cosas en Swift y otra programación idiomas, los índices comienzan en 0, no en 1
+            </p>
+            <h2 class="title">ejemplos de Arrays</h2>
+            <pre class="prettyprint">
+               var myArray: [String] = ["One", "Two", "Three"]
+                print (myArray[0])
+                print (myArray[1])
+               print (myArray[2])
+
+
+               var entries = myArray.count //cuenta cuantos item tiene un Array
+
+               //agregando objetos a un array
+                var myArray: [String] = ["One", "Two", "Three"]
+                myArray.append("Four")
+                myArray.append("Five")
+                myArray.append("Six")
+
+                //agregando multiples objetos a un arreglo
+                var myArray: [String] = ["One", "Two", "Three"]
+                myArray += ["Four", "Five", "Six"]
+
+
+                //agregando un string al inicio de un array
+                var myArray: [String] = ["Two", "Three"]
+                myArray.insert("One", at: 0)
+
+
+                //recorriendo un arreglo
+                var myArray: [String] = ["One", "Two", "Three"]
+                for myString in myArray {
+                    print(myString)
+                 }
+
+                 //removiendo un objeto
+                 var myArray: [String] = ["One", "Two", "Three"]
+                  myArray.remove(at: 1)
+                 for myString in myArray {
+                 print(myString)
+                  }
+            </pre>
+            <h2 class="title">
+                Usando la clase diccionario
+            </h2>
+            <p class="parrafo">
+                La clase Swift Dictionary también es un tipo útil de clase de colección. Permite el almacenamiento de objetos, al igual que el Clase de matriz, pero Dictionary es diferente en el sentido de que permite asociar una clave con la entrada. Por ejemplo, puede
+                crear un diccionario que almacene una lista de atributos sobre alguien, como nombre, apellido, y así. En lugar de acceder a los atributos con un índice como con una matriz, el diccionario podría usar un Cadena como "nombre". Sin embargo,
+                todas las claves deben ser únicas, es decir, "firstName" no puede existir más de una vez. Dependiendo de su programa, encontrar nombres únicos normalmente no es un problema. Aquí hay un ejemplo de cómo crear un diccionario:
+
+            </p>
+            <pre class="prettyprint">
+                var person: [String: String] = ["firstName": "John", "lastName": "Doe"]
+
+            </pre>
+            <p class="parrafo">
+                Esto crea un diccionario simple llamado persona. La siguiente parte de la declaración le dice al diccionario qué tipos de objetos serán las claves y los valores. En este caso, las claves son cadenas y los valores son cadenas. Luego agrega dos claves al
+                diccionario. La primera clave es firstName, y esa clave tiene un valor de John. los la segunda clave es lastName, y eso tiene un valor de Doe. Puede acceder a los valores en el diccionario utilizando un notación similar a las matrices:
+
+            </p>
+            <pre class="prettyprint">
+                person["firstName"] = "Joe"
+         </pre>
+            <p class="parrafo">
+                Puede agregar una nueva clave a un diccionario con la misma notación:
+            </p>
+            <pre class="prettyprint">
+               person["gender"] = "Male"
+            </pre>
+            <p class="parrafo">
+                Si decide que desea eliminar una clave de un diccionario, como la clave de género que acaba de agregar, usted puede hacerlo estableciendo el valor de esa clave en nil:
+            </p>
+            <pre class="prettyprint">
+                person["gender"] = nil
+            </pre>
+            <p class="parrafo">
+                Ahora el diccionario contendrá solo firstName y lastName. Recuerda que los diccionarios no son ordenado. No puede confiar en el orden, pero habrá ocasiones en las que necesite iterar sobre un diccionario. Esta se realiza de manera similar a las matrices.
+                La principal diferencia es que en una matriz, se asigna una variable, mientras en un diccionario, debe asignar la clave y el valor.
+            </p>
+            <pre class="prettyprint">
+                var person: [String: String] = ["firstName": "John", "lastName": "Doe"]
+                for (myKey, myValue) in person {
+                    print(myKey + ": " + myValue)
+                 }
+            </pre>
+
+        </div>
+
+        <script src="./js/main.js"></script>
+        <script src="./js/lang-swift.js"></script>
+        <script>
+            window.onload = function() {
+                prettyPrint();
+            }
+        </script>
+</body>
+
+</html>
